@@ -29,10 +29,7 @@
 					</form>
 				</div>
 					<div class="aside">
-					<p class = "p1">
-					还没有账号？
-					<a href = "register.php">免费注册</a>
-					</p>
+					<p class = "p1">还没有账号？<a href = "register.php">免费注册</a></p>
 				</div>
 				</div>
 		</div>

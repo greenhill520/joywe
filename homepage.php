@@ -38,6 +38,8 @@ else {
                     <tr><td>个性签名：</td><td><?= $user->info?></td></tr>
                     <tr><td>用户名：</td><td><?= $user->name?></td></tr>
                     <tr><td>性别：</td><td><?= $user->sex == 'M'?'男':'女' ?></td></tr>
+                    <tr><td>邮箱：</td><td><?=$user->email?></td></tr>
+                    <tr><td>手机：</td><td><?=$user->phone?></td></tr>
                     <tr><td>出生年月：</td><td><?= $user->birth?></td></tr>
                     <tr><td>居住城市：</td><td><?= $user->city?></td></tr>
                     <tr><td>注册时间:</td><td><?= $user->createTime?></td></tr>
@@ -56,7 +58,7 @@ else {
                         <td id="wid"><?= $act->actdate ?>&nbsp;<?= $act->actstart?>:00 - <?= $act->actdate ?>&nbsp;<?= $act->actend?>:00</td>
                         <td id="wid"><?= $act->actloc?></td>
                         <td id="wid"><?= $act->getUser()->name?></td>
-                        <td id="wid"><?= $act->actinfo?></td>
+                        <td id="wid"><?= $act->actinfo?>&nbsp;<strong>详情</strong></td>
                     </tr>
                 <?php } ?>
                 </table>

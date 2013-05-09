@@ -10,14 +10,6 @@
 		$user = getDataById(new ReflectionClass('User'),'user',$_SESSION['userID']);
 ?>
 		<li class="headerli" ><a href="homepage.php"><?=$user->name?>的个人主页</a></li>
-		
-<?php
-		if($user->isAdmin){			
-?>
-		<li class="headerli" ><a href="admin.php">管理</a></li>
-<?php
-		}
-?>
 		<li class="headerli" ><a href="control/logout.php">退出</a></li>
 
 <?php

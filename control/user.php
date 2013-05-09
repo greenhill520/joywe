@@ -1,10 +1,11 @@
 <?php
 class User {
 	public $id;
-	public $name;	
-	public $info;	
-	public $picPath;		
-	public $isAdmin;
+	public $name;
+	public $email;
+    public $phone;
+    public $info;
+    public $picPath;
 	public $createTime;
 	public $sex;
 	public $birth;
@@ -13,13 +14,14 @@ class User {
 	public function __construct($data) {		
 		$this->id = (int)$data[0];
 		$this->name = $data[1];
-		$this->info = $data[3];
-		$this->picPath = $data[4];
-		$this->isAdmin = $data[5];
-		$this->createTime = $data[6];
-		$this->sex = $data[7];
-		$this->birth = $data[8];
-		$this->city = $data[9];
+		$this->email = $data[3];
+        $this->phone = $data[4];
+        $this->info = $data[5];
+        $this->picPath = $data[6];
+		$this->createTime = $data[7];
+		$this->sex = $data[8];
+		$this->birth = $data[9];
+		$this->city = $data[10];
 	}
 	
 	public function getActivities() {

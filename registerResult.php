@@ -12,7 +12,14 @@
 	if( isset($_REQUEST['user_name'])){
 		$userName = $_REQUEST['user_name'];
 		$passWord = $_REQUEST['password'];
-		$return = addUser($userName,$passWord);
+        $passWord2 = $_REQUEST['password2'];
+        $email = $_REQUEST['email'];
+        if($passWord == $passWord2) {
+		    $return = addUser($userName,$passWord,$email);
+        }
+        else {
+            $retrun = "error";
+        }
 	}
 	if($return == "error 1" || $return == "error") {
 	?>

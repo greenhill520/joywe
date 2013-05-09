@@ -25,6 +25,16 @@
 							<input id="password" class="basic-input" type="password" maxlength="14" tabindex="2" name="password">
 							<span id="prompt3" class="validate-option" style="display: none;">字母、数字或符号，最长15个字符，区分大小写</span>
 						</div>
+                        <div class="item">
+                            <label>确认密码</label>
+                            <input id="password" class="basic-input" type="password" maxlength="14" tabindex="2" name="password2">
+                            <span id="prompt3" class="validate-option" style="display: none;">字母、数字或符号，最长15个字符，区分大小写</span>
+                        </div>
+                        <div class="item">
+                            <label>邮箱</label>
+                            <input id="email" class="basic-input" type="text" value="" tabindex="3" maxlength="40" name="email">
+                            <span id="prompt2" class="validate-option" style="display: none;">邮箱地址</span>
+                        </div>
 						<div class="item-submit">
 							<label>&nbsp;</label>
 							<input id="button" class="btn-submit" type="submit" title="注册" tabindex="6" value="注册">

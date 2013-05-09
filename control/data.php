@@ -2,18 +2,18 @@
 include_once ("control.php");
 
 //******************************************add user**************************************************
-addUser('xinliang', '123456');
-addUser('herong', '123456');
-addUser('weijian', '123456');
-addUser('wenjie', '123456');
-addUser('jiayi', '123456');
-addUser('dinghui', '123456');
-addUser('chenyu', '123456');
-addUser('wanqi', '123456');
-addUser('weiqi', '123456');
-addUser('ruonan', '123456');
-addUser('ganqian', '123456');
-addUser('shanshan', '123456');
+addUser('xinliang', '123456','569559779@qq.com');
+addUser('herong', '123456','123456@qq.com');
+addUser('weijian', '123456','123456@qq.com');
+addUser('wenjie', '123456','123456@qq.com');
+addUser('jiayi', '123456','123456@qq.com');
+addUser('dinghui', '123456','123456@qq.com');
+addUser('chenyu', '123456','123456@qq.com');
+addUser('wanqi', '123456','123456@qq.com');
+addUser('weiqi', '123456','123456@qq.com');
+addUser('ruonan', '123456','123456@qq.com');
+addUser('ganqian', '123456','123456@qq.com');
+addUser('shanshan', '123456','123456@qq.com');
 
 //******************************************login*****************************************************
 $user1 =    login('xinliang', '123456') -> id;
@@ -30,7 +30,7 @@ $user11 =   login('ganqian', '123456') -> id;
 $user12 =   login('shanshan', '123456') -> id;
 
 //********************************modifyItems********************************************************
-modify('user', array('PicPath' => "u1739544-4.jpg", 'Info' => "a happy boy"), $user1);
+modify('user', array('PicPath' => "u1739544-4.jpg", 'Info' => "a happy boy",'Phone'=>"15889934874"), $user1);
 modify('user', array('PicPath' => "u2117077-1.jpg"), $user3);
 modify('user', array('PicPath' => "u1860328-24.jpg"), $user4);
 modify('user', array('PicPath' => "u3865207-9.jpg"), $user5);

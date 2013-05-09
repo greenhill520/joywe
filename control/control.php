@@ -11,7 +11,7 @@ function connect($user, $password) {
 $db = connect('root', '');
 
 //成功返回user类，已存在帐号返回error，失败返回false
-function addUser($userName,$password) {
+function addUser($userName,$password,$email) {
 	global $db;
 	try {
 		$pwmd = md5(md5($password));
@@ -21,7 +21,7 @@ function addUser($userName,$password) {
 			return "error 1";
 		}
 		
-		$db->exec("INSERT INTO user VALUES(null,'$userName','$pwmd','','',0,null,'','','')");
+		$db->exec("INSERT INTO user VALUES(null,'$userName','$pwmd','$email','','','',null,'','','')");
 		
 		$id = getLastInsertId();
 
@@ -36,30 +36,30 @@ function addUser($userName,$password) {
 
 //成功返回类，失败返回false
 function login($userName,$password){
-	global $db;
-	try {
-		$pwmd = md5(md5($password));
-		$res = $db->query("select * from user where userName = '$userName'");
-		$isfind = false;
-		
-		foreach($res as $row)
-			if($row[2] == $pwmd){
-				$isfind = true;
-				break;
-			}
-			
-		if ($isfind){
-			$user = new user($row);
-			return $user;
-		}else{
-			$user = null;
-			return false;
-		}
-			
-	} catch (Exception $e) {
-		$db->rollBack();
-		return false;
-	}
+    global $db;
+    try {
+        $pwmd = md5(md5($password));
+        $res = $db->query("select * from user where userName = '$userName'");
+        $isfind = false;
+
+        foreach($res as $row)
+            if($row[2] == $pwmd){
+                $isfind = true;
+                break;
+            }
+
+        if ($isfind){
+            $user = new user($row);
+            return $user;
+        }else{
+            $user = null;
+            return false;
+        }
+
+    } catch (Exception $e) {
+        $db->rollBack();
+        return false;
+    }
 }
 
 //没有检验合法性的，一旦提交就修改
