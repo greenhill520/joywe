@@ -19,7 +19,7 @@
 		$_SESSION['userID'] = $return->id;
 	?>
 	<div id = "success">
-	<p>登录成功，<a href="index.php">返回主页</a></p>
+	<p>登录成功，<a href="homepage.php">返回主页</a></p>
 	</div>
 	<?php }else{ ?>
 	<div id ="failed">
