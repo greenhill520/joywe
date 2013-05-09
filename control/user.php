@@ -39,19 +39,19 @@ class User {
 	public function getFriends() {
 		$sql = "select user.*
 		from user,friend
-		where (user.id = friend.UserA and friend.UserB = ?) or (user.id = friend.UserB and friend.UserA = ?)
+		where (user.id = friend.UserB and friend.UserA = ?)
 		order by Date desc";
 		$type = new ReflectionClass('User');
-		return getClassByInput($type,$sql,array($this->id, $this->id));
+		return getClassByInput($type,$sql,array($this->id));
 	}
 	
 	public function getFriendNum(){
 		$table = "(select user.*
 		from user,friend
-		where (user.id = friend.UserA and friend.UserB = $this->id) or (user.id = friend.UserB and friend.UserA = $this->id)) temp";
+		where (user.id = friend.UserB and friend.UserA = $this->id)) temp";
 		return countNum($table);
 	}
-	
+
 	public function isInActivity($ActID) {
 		$sql = "select 1 from joinin
 		where joinin.UserID = ? and joinin.ActID = ?";

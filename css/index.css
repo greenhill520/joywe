@@ -12,6 +12,7 @@ article {
     border-radius: 5px;
     float: left;
     padding: 10px;
+    margin: 0 0 25px;
 }
 aside {
     float:right;
@@ -20,4 +21,7 @@ aside {
     width: 25%;
     padding: 10px;
     margin: 0 0 25px;
+}
+#wid {
+    width:20%;
 }

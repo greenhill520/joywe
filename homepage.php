@@ -52,11 +52,11 @@ else {
                     foreach($activities as $act) {
                 ?>
                     <tr style="text-align: center;">
-                        <td><?= $act->actname?></td>
-                        <td><?= $act->actdate ?></td>
-                        <td><?= $act->actloc?></td>
-                        <td><?= $act->getUser()->name?></td>
-                        <td><?= $act->actinfo?></td>
+                        <td id="wid"><?= $act->actname?></td>
+                        <td id="wid"><?= $act->actdate ?>&nbsp;<?= $act->actstart?>:00 - <?= $act->actdate ?>&nbsp;<?= $act->actend?>:00</td>
+                        <td id="wid"><?= $act->actloc?></td>
+                        <td id="wid"><?= $act->getUser()->name?></td>
+                        <td id="wid"><?= $act->actinfo?></td>
                     </tr>
                 <?php } ?>
                 </table>
@@ -68,6 +68,7 @@ else {
             foreach($friends as $friend) {
             ?>
             <dl>
+                <hr>
                 <dd>
                     <img alt="userface" src="images/<?php echo empty($friend->picPath)?'user.jpg':$friend->picPath?>">
                     <?= $friend->name?>
