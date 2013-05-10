@@ -38,10 +38,7 @@
             modify("user",array("City"=>$_REQUEST['city']),$user->id);
         }
         if(isset($_REQUEST['sex'])) {
-            $sex = "M";
-            if($_REQUEST['sex'] == "女")
-                $sex = "F";
-            modify("user",array("Sex"=>$sex),$user->id);
+            modify("user",array("Sex"=>$_REQUEST['sex']),$user->id);
         }
     }
     if($return) {

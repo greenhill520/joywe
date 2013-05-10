@@ -29,14 +29,24 @@ else {
                 <tr><td><label class="editLabel">上传:</label></td><td><input type="file" name="picPath" value="<?= $user->picPath?>"></td></tr>
                 <tr><td>个性签名：</td><td><input type="text" name="info" value="<?= $user->info?>"/></td></tr>
                 <tr><td>用户名：</td><td><input type="text" name="username" value="<?= $user->name?>"/></td></tr>
-                <tr><td>性别：</td><td><input type="test" name="sex" value=" <?= $user->sex == 'M'?'男':'女' ?>"/></td></tr>
+                <tr><td>性别：</td>
+                    <td>
+                        <?php if($user->sex == "M") { ?>
+                        <input type="radio" name="sex" value="M" checked="checked"/> 男
+                        <input type="radio" name="sex" value="F" /> 女
+                        <?php } else { ?>
+                        <input type="radio" name="sex" value="M"/> 男
+                        <input type="radio" name="sex" value="F" checked="checked" /> 女
+                        <?php } ?>
+                    </td>
+                </tr>
                 <tr><td>邮箱：</td><td><input type="test" name="email" value="<?=$user->email?>"/></td></tr>
                 <tr><td>手机：</td><td><input type="test" name="phone" value="<?=$user->phone?>"/></td></tr>
                 <tr><td>出生年月：</td><td><input type="text" name="birth" value="<?= $user->birth?>"/></td></tr>
                 <tr><td>居住城市：</td><td><input type="text" name="city" value="<?= $user->city?>"/></td></tr>
                 <tr><td>注册时间:</td><td><?= $user->createTime?></td></tr>
                 <tr><td><input type="submit" value="确认" name="submit"></td>
-                    <td><a href="homepage.php?id=<?=$user->id?>"><input type="button" value="返回" /></a></td>
+                    <td><a href="homepage.php?id=<?=$user->id?>"><input type="button" value="取消" /></a></td>
                 </tr>
             </table>
             </form>
