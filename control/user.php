@@ -59,13 +59,7 @@ class User {
 		where joinin.UserID = ? and joinin.ActID = ?";
 		return isrecord($sql,array($this->id, $ActID));
 	}
-	
-	public function isActAdmin($ActID) {
-		$sql = "select 1 from activity
-		where activity.UserID = ? and activity.id = ?";
-		return isrecord($sql,array($this->id, $ActID));
-	}
-	
+
 	public function isFriend($id) {
 		$sql = "select 1
 		from friend

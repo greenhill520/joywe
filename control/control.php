@@ -74,6 +74,31 @@ function modifyPassword($id,$newPassword){
 	}
 }
 
+function deleteItems($table,$idname,$id){
+    global $db;
+    try {
+        $result = true;
+        switch($table){
+            case 'topic':
+                $result = $result?deleteItems('feedback','TopicID',$id):false;
+                break;
+            case 'groups':
+                $result = $result?deleteItems('usertogroup','GroupID',$id):false;
+                break;
+            case 'user':
+                $result = $result?deleteItems('friend','UserA',$id):false;
+                $result = $result?deleteItems('friend','UserB',$id):false;
+                $result = $result?deleteItems('group','AdminID',$id):false;
+                $result = $result?deleteItems('topic','UserID',$id):false;
+                break;
+        }
+        $result = $db->exec("DELETE FROM $table WHERE $idname = $id");
+        return $result;
+    } catch (Exception $e) {
+        $db->rollBack();
+        return false;
+    }
+}
 //输入表名
 //$table可以是一个表的名字也可以是sql的一个查询表
 function countNum($table){
@@ -175,32 +200,6 @@ function modify($table,$array,$id){
 		$sql = $sql."id = $id where id = $id";
 		
 		return $db->exec($sql);
-	} catch (Exception $e) {
-		$db->rollBack();
-		return false;
-	}
-}
-
-function deleteItems($table,$idname,$id){
-	global $db;
-	try {		
-		$result = true;
-		switch($table){
-			case 'topic':
-				$result = $result?deleteItems('feedback','TopicID',$id):false;
-				break;
-			case 'groups':
-				$result = $result?deleteItems('usertogroup','GroupID',$id):false;
-				break;
-			case 'user':
-				$result = $result?deleteItems('friend','UserA',$id):false;
-				$result = $result?deleteItems('friend','UserB',$id):false;
-				$result = $result?deleteItems('group','AdminID',$id):false;
-				$result = $result?deleteItems('topic','UserID',$id):false;
-				break;
-		}
-		$result = $db->exec("DELETE FROM $table WHERE $idname = $id");
-		return $result;
 	} catch (Exception $e) {
 		$db->rollBack();
 		return false;

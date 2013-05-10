@@ -30,7 +30,7 @@ $user11 =   login('ganqian', '123456') -> id;
 $user12 =   login('shanshan', '123456') -> id;
 
 //********************************modifyItems********************************************************
-modify('user', array('PicPath' => "u1739544-4.jpg", 'Info' => "a happy boy",'Phone'=>"15889934874"), $user1);
+modify('user', array('PicPath' => "u1739544-4.jpg", 'Info' => "a happy boy",'Phone'=>"15889934874",'Sex'=>"M",'Birth'=>"1990-02-28",'City'=>"广州"), $user1);
 modify('user', array('PicPath' => "u2117077-1.jpg"), $user3);
 modify('user', array('PicPath' => "u1860328-24.jpg"), $user4);
 modify('user', array('PicPath' => "u3865207-9.jpg"), $user5);

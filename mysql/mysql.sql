@@ -18,7 +18,7 @@ CREATE TABLE user (
 	PicPath varchar(32) NOT NULL ,
 	Date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,   
 	Sex char(1) NOT NULL DEFAULT 'M',
-	Birth date DEFAULT NULL,
+	Birth varchar(12) DEFAULT '1970-01-01',
 	City varchar(20) NOT NULL DEFAULT '广州',
 	
 	PRIMARY KEY (id),
