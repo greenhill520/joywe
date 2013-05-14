@@ -3,7 +3,7 @@
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link href="css/result.css" type="text/css" rel="stylesheet" />
-	<title> 登录成功/失败页面 </title>
+	<title> 成功、失败页面 </title>
 	</head>
 	<body>
 	<div id="overall">

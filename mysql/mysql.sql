@@ -1,4 +1,4 @@
-﻿# 建表
+# 建表
 set names utf8;
 set character_set_database = utf8;
 set character_set_server = utf8;
@@ -18,7 +18,7 @@ CREATE TABLE user (
 	PicPath varchar(32) NOT NULL ,
 	Date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,   
 	Sex char(1) NOT NULL DEFAULT 'M',
-	Birth varchar(12) DEFAULT '1970-01-01',
+	Birth date DEFAULT '1970-01-01',
 	City varchar(20) NOT NULL DEFAULT '广州',
 	
 	PRIMARY KEY (id),
@@ -47,9 +47,10 @@ CREATE TABLE activity(
 	ActName varchar(32) NOT NULL,
 	ActInfo varchar(140) NOT NULL,
 	UserID int(32) unsigned NOT NULL,
-	ActTime date NOT NULL,
-	start int(4) NOT NULL,
-	end int(4) NOT NULL,
+	ActTimeS date NOT NULL,
+  ActTimeE date NOT NULL,
+	startT int(4) NOT NULL,
+	endT int(4) NOT NULL,
 	ActLoc varchar(50) NOT NULL,
 	
 	PRIMARY KEY (id)

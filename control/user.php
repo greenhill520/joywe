@@ -2,6 +2,7 @@
 class User {
 	public $id;
 	public $name;
+    public $password;
 	public $email;
     public $phone;
     public $info;
@@ -14,6 +15,7 @@ class User {
 	public function __construct($data) {		
 		$this->id = (int)$data[0];
 		$this->name = $data[1];
+        $this->password = $data[2];
 		$this->email = $data[3];
         $this->phone = $data[4];
         $this->info = $data[5];

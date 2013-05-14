@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 include_once("user.php");
 include_once("activity.php");
 
@@ -137,9 +137,9 @@ function addInActivity($userID,$actID){
 }
 
 //增加活动，成功返回id，失败返回false
-function addActivity($name,$info,$userID,$datetime,$astart,$aend,$location){
-	$sql_activity = "INSERT INTO activity VALUES(null,?,?,?,?,?,?,?)";
-	$array_activity = array($name,$info,$userID,$datetime,$astart,$aend,$location);
+function addActivity($name,$info,$userID,$datetime,$datetimeE,$astart,$aend,$location){
+	$sql_activity = "INSERT INTO activity VALUES(null,?,?,?,?,?,?,?,?)";
+	$array_activity = array($name,$info,$userID,$datetime,$datetimeE,$astart,$aend,$location);
 	if(action($sql_activity,$array_activity) == false)
 		return false;
 		
@@ -164,8 +164,9 @@ function getDataById($type,$table,$id) {
 	$table = addslashes($table);
 	
 	$res = $db->query("select * from $table where id = $id");
+    if( empty($res) )
+        return false;
 	$class = $type->newInstance($res->fetch());
-	
 	return $class;
 }
 

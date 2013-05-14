@@ -4,7 +4,8 @@ class Activity {
 	public $actname;	
 	public $actinfo;
 	public $actuserID;	
-	public $actdate;		
+	public $actdateS;
+    public $actdateE;
 	public $actstart;
 	public $actend;
 	public $actloc;
@@ -14,10 +15,11 @@ class Activity {
 		$this->actname = $data[1];
 		$this->actinfo = $data[2];
 		$this->actuserID = $data[3];
-		$this->actdate = $data[4];
-		$this->actstart = $data[5];
-		$this->actend = $data[6];
-		$this->actloc = $data[7];
+		$this->actdateS = $data[4];
+		$this->actdateE = $data[5];
+		$this->actstart = $data[6];
+		$this->actend = $data[7];
+		$this->actloc = $data[8];
 	}
 	
 	public function getUser(){

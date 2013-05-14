@@ -2,26 +2,129 @@
 	font-family: "微软雅黑", Verdana, Geneva, sans-serif;
 }
 body {
-    margin: 0 50px;
-    padding: 0 0 25px 0;
+   /* margin: 0 50px;
+    padding: 0 0 25px 0;*/
+    margin: 0 ;
+    background-image: url(../images/background.gif);
 }
+
 article {
-    background-color: #1e90ff;
+    background-color: #fbb450;
     display: inline-block;
-    width: 70%;
+    width: 65%;
     border-radius: 5px;
     float: left;
-    padding: 10px;
-    margin: 0 0 30px;
+    margin-left: 19px;
+    margin-top:10px;
+    /*padding: 10px;
+    margin: 0 0 30px;*/
 }
 aside {
     float:right;
-    background-color: #9acd32;
+    /*background-color: #9acd32;*/
+    background-image: url(../images/friend.png);
+    background-size: 225px;
     border-radius: 5px;
-    width: 25%;
-    padding: 10px;
-    margin: 0 0 30px;
+    width: 225px;
+    height:500px;
+    margin-top: 10px;   
+    margin-right: 70px;
+    /*padding: 10px;
+    margin: 0 0 30px;*/
 }
+
+section{
+    /*margin:0 auto;*/
+    width: 500px;
+    margin-left: 10px;
+}
+
 #wid {
     width:20%;
 }
+
+div.header_home{
+   /* position: absolute;
+    z-index: 1;*/
+    /*margin-top: 0px;*/
+    background-color: #FFC125;
+    height: 240px;
+    top:0px;
+}
+
+div.header_content{
+    margin-top: 10px;
+}
+
+div.header_top{
+    /*height: 80px;*/
+    /*border: 3px black solid;*/
+    height: 80px;
+    background-image: url(../images/banner.png);
+   /*background-size: 100 150%;  */
+}
+
+div.header_top img{
+    float: right;
+    padding-top: 46px;
+    margin-right: 10px;    
+}
+
+div.header_content{
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+    width: 950px;
+    left: 50%;
+    margin-left: -475px;
+}
+
+#user_img{
+    padding-top: 10px;
+    width: 200px;
+    height:200px;
+}
+
+div.name
+{
+    padding-top: 37px;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 20pt;
+}
+
+div.info
+{
+    margin-top:25px;
+    color: grey;
+    font-size: 14pt;
+}
+
+div.span5 img{
+    margin-top:78px;
+    max-height: 120px;
+    max-width: 120px;
+}
+
+td{
+    padding-top: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 15pt;
+    color: grey;
+    /*font-family:  ;*/
+}
+
+table{
+    margin-top:3em;
+}
+
+td.actAndFriNum {
+    font-size: 48px;
+}
+
+div.content{
+    margin:0 auto;
+    width: 950px;
+}
+

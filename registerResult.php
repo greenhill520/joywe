@@ -3,7 +3,7 @@
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link href="#" type="text/css" rel="stylesheet" />
-	<title> 注册成功/失败页面 </title>
+	<title> 注册页面 </title>
 	</head>
 	<body>
 	<div id="overall">
