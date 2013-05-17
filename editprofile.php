@@ -12,11 +12,13 @@ else {
 <!DOCTYPE html>
     <html>
     <head>
-        <link href="css/index.css" rel="stylesheet" />
         <link href="css/bootstrap.min.css" rel="stylesheet" />
+		<link href="css/index.css" rel="stylesheet" />
+		<link href="css/profile.css" rel="stylesheet"/>
+        <link href="images/icon.png" rel="shortcut icon">
         <script src="js/bootstrap.min.js"></script>
         <script src="js/homepage.js"></script>
-        <title> Joywe班级聚会 </title>
+        <title> 修改个人信息 </title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     </head>
     <body>
@@ -34,10 +36,10 @@ else {
                 <div class="info"><?= $user->info?></div>
             </div>
             <div class="span3">
-                <a href="homepage.php?id=<?= $user->id?>"><img class="joywe" src="images/joywe.png"/></a>
+                <a href="homepage.php?id=<?= $user->id?>"><img title="Back to my homepage" class="joywe" src="images/joywe.png"/></a>
                 <table>
                     <tr><td class="actAndFriNum"><?= $actNum?></td><td class="actAndFriNum"><?= $friNum?></td></tr>
-                    <tr><td>ACTIVITIES</td><td>FRIENDS</td></tr>
+                    <tr><td class="actAndFri">ACTIVITIES</td><td class="actAndFri">FRIENDS</td></tr>
                 </table>
             </div>
         </div>
@@ -45,76 +47,106 @@ else {
     <?php $methods = $_REQUEST['method'] ?>
     <div class="content">
         <article>
+
             <?php if($methods == "information") { ?>
             <section>
-                <h3>修改个人信息</h3>
+				<div class="profile_content">
+                    <div class="profile_banner">
+                        <p>Profile setting</p>
+                    </div>
                 <form method="post" action="editprofileResult.php?id=<?= $user->id?>" name="form2">
-                    <table>
-                        <tr><td>个人头像：</td><td><img style="width:60px;height: 60px;" alt="userface" src="images/<?php echo empty($user->picPath)?'user.jpg':$user->picPath?>"></td>
-                        </tr>
-                        <tr><td><label class="editLabel">上传:</label></td><td><input type="file" name="picPath" value="<?= $user->picPath?>"></td></tr>
-                        <tr><td>个性签名：</td><td><input type="text" name="info" value="<?= $user->info?>"/></td></tr>
-                        <tr><td>用户名：</td><td><input type="text" name="username" value="<?= $user->name?>"/></td></tr>
-                        <tr><td>性别：</td>
-                            <td>
+                        <table class="profile_table">
+                        <tr><td class="editTag">更改头像:</td>
+                            <td class="editContent"><input type="file" name="picPath" value="<?= $user->picPath?>"></td></tr>
+                        <tr><td class="editTag">性别：</td>
+                            <td class="editContent">
                                 <?php if($user->sex == "M") { ?>
-                                    <input type="radio" name="sex" value="M" checked="checked"/> 男
-                                    <input type="radio" name="sex" value="F" /> 女
+                                    男 <input type="radio" name="sex" value="M" checked="checked"/>
+                                    女 <input type="radio" name="sex" value="F" />
                                 <?php } else { ?>
-                                    <input type="radio" name="sex" value="M"/> 男
-                                    <input type="radio" name="sex" value="F" checked="checked" /> 女
+                                    男 <input type="radio" name="sex" value="M"/>
+                                    女 <input type="radio" name="sex" value="F" checked="checked" />
                                 <?php } ?>
                             </td>
                         </tr>
-                        <tr><td>邮箱：</td><td><input type="text" name="email" value="<?=$user->email?>"/></td></tr>
-                        <tr><td>手机：</td><td><input type="text" name="phone" value="<?=$user->phone?>"/></td></tr>
-                        <tr><td>出生年月：</td><td><input type="text" name="birth" value="<?= $user->birth?>"/></td></tr>
-                        <tr><td>居住城市：</td><td><input type="text" name="city" value="<?= $user->city?>"/></td></tr>
-                        <tr><td>注册时间:</td><td><?= $user->createTime?></td></tr>
-                        <tr><td><input type="submit" value="确认" name="submit"></td>
-                            <td><a href="homepage.php?id=<?=$user->id?>"><input type="button" value="取消" /></a></td>
-                        </tr>
-                        <input style="display: none" name="method" value = "information"/>
+                        <tr><td class="editTag">生日：</td><td class="editContent"><input type="text" name="birth" value="<?= $user->birth?>"/></td></tr>
+                        <tr><td class="editTag">个性签名：</td><td class="editContent"><input type="text" name="info" value="<?= $user->info?>"/></td></tr>
+                        <tr><td class="editTag">用户名：</td><td class="editContent"><input type="text" name="username" value="<?= $user->name?>"/></td></tr>
+                        
+                        <tr><td class="editTag">邮箱：</td><td class="editContent"><input type="text" name="email" value="<?=$user->email?>"/></td></tr>
+                        <tr><td class="editTag">手机：</td><td class="editContent"><input type="text" name="phone" value="<?=$user->phone?>"/></td></tr>
+                        
+                        <tr><td class="editTag">城市：</td><td class="editContent"><input type="text" name="city" value="<?= $user->city?>"/></td></tr>
+
+                        
                     </table>
+					<div class="profile_button">
+                            <input class="btn btn-primary" type="submit" value="确认" name="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="homepage.php?id=<?=$user->id?>"><input  class="btn btn-primary" type="button" value="取消" /></a>
+                            <input style="display: none" name="method" value = "information"/>
+                      </div>
                 </form>
             </section>
         <?php } else { ?>
             <section>
-                <h3>修改密码</h3>
+                <div class="password_content">
+                    <div class="password_banner">
+                        <p>Password Edit</p>
+                    </div>
                 <form method="post" action="editprofileResult.php?id=<?= $user->id?>" name="form3">
-                    <table>
-                        <tr><td>原密码：</td><td><input type="password" name="oriPass"/></td></tr>
-                        <tr><td>新密码：</td><td><input type="password" name="newPass"/></td></tr>
-                        <tr><td>确认新密码：</td><td><input type="password" name="conPass"/></td></tr>
-                        <tr><td><input type="submit" value="确认" name="submit"></td>
-                            <td><a href="homepage.php?id=<?= $user->id?>"><input type="button" value="取消" /></a></td>
-                        </tr>
-                        <input style="display: none" name="method" value = "passW"/>
+                    <table class="password_table">
+                        <tr><td class="password_tag">原密码：</td><td class="passwordinfo_content"><input type="password" name="oriPass"/></td></tr>
+                        <tr><td class="password_tag">新密码：</td><td class="passwordinfo_content"><input type="password" name="newPass"/></td></tr>
+                        <tr><td class="password_tag">确认新密码：</td><td class="passwordinfo_content"><input type="password" name="conPass"/></td></tr>
+
+                        
                     </table>
+                            <div class="password_button">
+                            <input class="btn btn-primary"type="submit" value="确认" name="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="homepage.php?id=<?= $user->id?>"><input class="btn btn-primary" type="button" value="取消" /></a>
+                        </div>
+                        <input style="display: none" name="method" value = "passW"/>
                 </form>
+            </div>
             </section>
         <?php } ?>
         </article>
         <aside>
+			<div class="friend_content">
+                <div class="friend_banner">
+                    <p>My Friends</p>
+                </div>
+                <div class="input-append">
+                    <form method="post" action="homepage.php?search=search" name="form1">
+                    <input class="search" name="target" id="appendedInputButton" type="text">
+                    <button id="search"  name="submit" class="btn" type="submit">Search</button>
+                    </form>
+                </div>
             <?php
             $num = 0;
-            if( $friNum > 7 ){
-                $num = 7;
+            if( $friNum > 5 ){
+                $num = 5;
             }
             else {
                 $num = $friNum;
             }
             for($i = 0; $i < $num; $i++) {
                 ?>
-                <dl>
-                    <dd>
-                        <img alt="userface" style="width: 60px; height: 60px;"src="images/<?php echo empty($friends[$i]->picPath)?'user.jpg':$friends[$i]->picPath?>">
-                        <a href="homepage.php?id=<?=$friends[$i]->id?>"><?= $friends[$i]->name?></a>
-                    </dd>
-                </dl>
+                <a href="homepage.php?id=<?=$friends[$i]->id?>">
+                <div class="friend_img">
+                    <img width="60px" height="60px" alt="userface" src="images/<?php echo empty($friends[$i]->picPath)?'user.jpg':$friends[$i]->picPath?>">   
+                </div>
+                <div class="friend_info">
+                    <div class="friend_name"><?= $friends[$i]->name?></div>
+                    <div class="friend_detail"><?= $friends[$i]->info?></div>
+                </div>
+                </a>
             <?php } ?>
         </aside>
+        <div class="clear">
+        </div>
     </div>
+        <?php include("footer.php");?>
     </body>
     </html>
 <?php } ?>

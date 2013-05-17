@@ -12,8 +12,10 @@ else {
 <!DOCTYPE html>
     <html>
     <head>
+       <link href="css/bootstrap.min.css" rel="stylesheet" />
         <link href="css/index.css" rel="stylesheet" />
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <link href="css/newactivity.css" rel="stylesheet" />
+        <link href="images/icon.png" rel="shortcut icon">
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery-1.7.1.min.js"></script>
         <script src="js/homepage.js"></script>
@@ -39,44 +41,67 @@ else {
                 <a href="homepage.php?id=<?= $user->id?>"><img class="joywe" src="images/joywe.png"/></a>
                 <table>
                     <tr><td class="actAndFriNum"><?= $actNum?></td><td class="actAndFriNum"><?= $friNum?></td></tr>
-                    <tr><td>ACTIVITIES</td><td>FRIENDS</td></tr>
+                    <tr><td class="actAndFri">ACTIVITIES</td><td class="actAndFri">FRIENDS</td></tr>
                 </table>
             </div>
         </div>
     </div>
     <div class="content">
         <article>
-            <section>
-                <h3>添加活动</h3>
-                <form method="post" action="#" name="form4">
-                    <table>
-                        <tr><td>活动主题</td><td><input type="text" name="actname"/></td></tr>
-                        <tr><td>活动地点</td><td><input type="text" name="actloc"/></td></tr>
-                        <tr><td>活动时间</td>
-                            <td><select onchange="getYear1(this);" id="actYear1"><option value="-1">--请选择--</option></select>年
-                                <select onchange="getMonth1(this);" id="actMonth1"><option value="-1">--请选择--</option></select>月
-                                <select onchange="getDay1(this);" id="actDay1"><option value="-1">--请选择--</option></select>日
-                                <select onchange="getHour1(this);" id="actHour1"><option value="-1">--请选择--</option></select>时
-                                <select onchange="getYear2(this);" id="actYear2"><option value="-1">--请选择--</option></select>年
-                                <select onchange="getMonth2(this);" id="actMonth2"><option value="-1">--请选择--</option></select>月
-                                <select onchange="getDay2(this);" id="actDay2"><option value="-1">--请选择--</option></select>日
-                                <select onchange="getHour2(this);" id="actHour2"><option value="-1">--请选择--</option></select>时
+                <section class="new_activity">
+                <div class="newactivity_banner">
+                        <p>New Activity</p>
+                </div>
+                <form method="post" action="makeactivityResult.php?id=<?=$user->id?>" name="form4">
+                    <table class="makeactivity_table">
+                        <tr><td id="wid" class="activity_tag">活动主题*</td><td id="wid" class="activity_content"><input class="activity_content" type="text" name="actname" size="10"></td></tr>
+                        <tr><td id="wid" class="activity_tag">活动地点*</td><td id="wid"><input class="activity_content" type="text" name="actloc"></td></tr>
+                        <tr><td id="wid" class="activity_tag">活动开始时间*</td>
+                            <td id="wid">
+                                <select onchange="getYear1(this);" id="actYear1" class="year" name="year1"><option value="-1">--年--</option></select>
+                                <select onchange="getMonth1(this);" id="actMonth1" class="month" name="month1"><option value="-1">--月--</option></select>
+                                <select onchange="getDay1(this);" id="actDay1" class="day" name="day1"><option value="-1">--日--</option></select>
+                                <select onchange="getHour1(this);" id="actHour1" class="time" name="hour1"><option value="-1">--时--</option></select>
                             </td>
                         </tr>
-                        <tr id="people"><td>参与人员</td></tr>
-                        <tr><td>活动简介</td><td><textarea rows="3" cols="20"></textarea></td></tr>
-                        <tr><td><input type="submit" value="确认" name="submit"></td>
-                            <td><a href="homepage.php?id=<?=$user->id?>"><input type="button" value="取消" /></a></td>
+                        <tr><td id="wid" class="activity_tag">活动结束时间*</td>
+                            <td id="wid">
+                                <select onchange="getYear2(this);" id="actYear2" class="year"name="year2"><option value="-1">--年--</option></select>
+                                <select onchange="getMonth2(this);" id="actMonth2" class="month" name="month2"><option value="-1">--月--</option></select>
+                                <select onchange="getDay2(this);" id="actDay2" class="day" name="day2"><option value="-1">--日--</option></select>
+                                <select onchange="getHour2(this);" id="actHour2" class="time" name="hour2"><option value="-1">--时--</option></select>
+                            </td>
+                        </tr>
+                        <tr><td id="wid" class="activity_tag">参与人员</td><td id="wid" class="activity_content"><div id="people"></div></td></tr>
+                        <tr><td id="wid" class="activity_tag">活动简介*</td><td id="wid" class="activity_content">
+                                <textarea class="textarea" rows="3" cols="20" name="actinfo"></textarea>
+                            </td>
                         </tr>
                     </table>
+                    <div class="newactivity_button">
+                        <input class="btn btn-primary" type="submit" value="确认" name="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="homepage.php?id=<?=$user->id?>"><input class="btn btn-primary" type="button" value="取消" /></a></td>
+                        <input style="display: none;" type="text" id="friID" name="friID">
+                    </div>
                 </form>
             </section>
         </article>
         <aside >
-            <h3>可选好友</h3>
-            <div id="friendLi"></div>
+                <div class="friend_banner">
+                    <p>My Friends</p>
+                </div>
+                <div class="input-append">
+                     <form method="post" action="homepage.php?search=search" name="form1">
+                    <input class="search" name="target" id="appendedInputButton" type="text">
+                    <button id="search"  name="submit" class="btn" type="submit">Search</button>
+                    </form>
+                </div>
+                 <div id="friendLi"></div>
         </aside>
+        <div class="clear">
+        </div>
     </div>
+         <?php include("footer.php");?>
     </body>
     </html>
 <?php } ?>

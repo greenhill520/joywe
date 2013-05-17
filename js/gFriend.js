@@ -51,5 +51,25 @@ function getHour2(selectPress) {
                                         y2:year2,m2:month2,d2:day2,s2:hour2});
 }
 
-
+function adduser() {
+    var seluser = document.getElementsByName("friuser");
+    var content = document.getElementById("people");
+    var content2 = document.getElementById("friID");
+    var txt = "";
+    var txt2 = "";
+    for( var i = 0; i < seluser.length; i++) {
+        if( seluser[i].checked) {
+            if( i == seluser.length - 1) {
+                txt = txt + seluser[i].value;
+                txt2 = txt2 + seluser[i].id;
+            }
+            else {
+                txt = txt + seluser[i].value + " ";
+                txt2 = txt2 + seluser[i].id + "-";
+            }
+        }
+    }
+    content2.value = txt2;
+    content.innerText = txt;
+}
 

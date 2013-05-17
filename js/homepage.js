@@ -62,6 +62,12 @@ window.onload = function(){
     }
 }
 
+function showMemu(li) {
+    document.getElementById("show").style.display = "block";
+}
+function hideMenu(li) {
+    document.getElementById("show").style.display = "none";
+}
 
 
 

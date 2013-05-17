@@ -3,12 +3,14 @@ include_once("user.php");
 include_once("activity.php");
 
 function connect($user, $password) {
-	$db = new PDO('mysql:host=127.0.0.1;dbname=classparty;charset=UTF-8', 'root', '');
+	$db = new PDO('mysql:host=127.0.0.1;dbname=classparty','root','');
 	$db->query("set names utf8");
+//	$db = new PDO('mysql:host=127.0.0.1;dbname=classparty','root','123');	//平台使用
 	return $db;
 }
 
 $db = connect('root', '');
+//$db = connect('root', '123');	//平台使用
 
 //成功返回user类，已存在帐号返回error，失败返回false
 function addUser($userName,$password,$email) {
@@ -74,25 +76,23 @@ function modifyPassword($id,$newPassword){
 	}
 }
 
-function deleteItems($table,$idname,$id){
+function deleteFri($id,$id2){
     global $db;
     try {
         $result = true;
-        switch($table){
-            case 'topic':
-                $result = $result?deleteItems('feedback','TopicID',$id):false;
-                break;
-            case 'groups':
-                $result = $result?deleteItems('usertogroup','GroupID',$id):false;
-                break;
-            case 'user':
-                $result = $result?deleteItems('friend','UserA',$id):false;
-                $result = $result?deleteItems('friend','UserB',$id):false;
-                $result = $result?deleteItems('group','AdminID',$id):false;
-                $result = $result?deleteItems('topic','UserID',$id):false;
-                break;
-        }
-        $result = $db->exec("DELETE FROM $table WHERE $idname = $id");
+        $db->exec("DELETE FROM friend WHERE UserA = $id and UserB = $id2");
+        return $result;
+    } catch (Exception $e) {
+        $db->rollBack();
+        return false;
+    }
+}
+function deleteAct($actid){
+    global $db;
+    try {
+        $result = true;
+        $db->exec("DELETE FROM joinin WHERE ActID = $actid");
+        $db->exec("DELETE FROM activity WHERE id = $actid");
         return $result;
     } catch (Exception $e) {
         $db->rollBack();
@@ -147,6 +147,31 @@ function addActivity($name,$info,$userID,$datetime,$datetimeE,$astart,$aend,$loc
 	return (addInActivity($userID,$activityId)?$activityId:false);
 }
 
+function searchUser($target) {
+    global $db;
+    try {
+        $res = $db->query("select * from user where userName = '$target'");
+        $isfind = false;
+
+        foreach($res as $row)
+            if($row[1] == $target){
+                $isfind = true;
+                break;
+            }
+
+        if ($isfind){
+            $user = new user($row);
+            return $user;
+        }else{
+            $user = null;
+            return false;
+        }
+
+    } catch (Exception $e) {
+        $db->rollBack();
+        return false;
+    }
+}
 
 //************************************************慎用的函数******************************************************
 //getDataById($type,$table,$id)						//$table是表名，$type是反射类型，成功返回type类型的对象数组
@@ -169,6 +194,18 @@ function getDataById($type,$table,$id) {
 	$class = $type->newInstance($res->fetch());
 	return $class;
 }
+function getDataByName($type,$table,$name) {
+    global $db;
+
+    if (!get_magic_quotes_gpc())
+        $table = addslashes($table);
+
+    $res = $db->query("select * from $table where userName = $name");
+    if( empty($res) )
+        return false;
+    $class = $type->newInstance($res->fetch());
+    return $class;
+}
 
 //想拿到user就$table = 'user',$type = new ReflectionClass('user');其他类推
 function getEarlyData($type, $table, $start, $count = 20){
@@ -187,11 +224,6 @@ function getEarlyDatabyConditoin($type, $table, $start, $count = 20,$array){
 	return getClassByInput($type,$sql,array());
 }
 
-function delete($table,$id){
-	$result = deleteItems($table,'id',$id);
-	return $result;
-}
-
 function modify($table,$array,$id){
 	global $db;
 	try {
@@ -199,8 +231,8 @@ function modify($table,$array,$id){
 		foreach($array as $name => $value)
 			$sql = $sql."$name = '$value',";
 		$sql = $sql."id = $id where id = $id";
-		
-		return $db->exec($sql);
+		$result = $db->exec($sql);
+        return $result;
 	} catch (Exception $e) {
 		$db->rollBack();
 		return false;

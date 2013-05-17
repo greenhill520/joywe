@@ -22,7 +22,7 @@ CREATE TABLE user (
 	City varchar(20) NOT NULL DEFAULT '广州',
 	
 	PRIMARY KEY (id),
-	KEY userName (userName(32))
+	KEY UserName (UserName(32))
 );
 
 #
@@ -63,20 +63,6 @@ CREATE TABLE activity(
 CREATE TABLE joinin(
 	UserID int(8) unsigned NOT NULL,
 	ActID int(8) unsigned NOT NULL,
-	
-	PRIMARY KEY (UserID, ActID),
-	FOREIGN KEY (UserID) REFERENCES user (id),
-	FOREIGN KEY (ActID) REFERENCES activity (id)
-);
-
-#
-# Table structure for table ''
-#
-# 邀请好友加入活动
-CREATE TABLE invitation(
-	UserID int(8) unsigned NOT NULL,
-	ActID int(8) unsigned NOT NULL,
-	Accept int(3) unsigned NOT NULL,
 	
 	PRIMARY KEY (UserID, ActID),
 	FOREIGN KEY (UserID) REFERENCES user (id),

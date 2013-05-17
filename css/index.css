@@ -1,52 +1,41 @@
 * {
 	font-family: "微软雅黑", Verdana, Geneva, sans-serif;
 }
+
 body {
-   /* margin: 0 50px;
-    padding: 0 0 25px 0;*/
-    margin: 0 ;
+    margin: 0;
     background-image: url(../images/background.gif);
 }
 
 article {
-    background-color: #fbb450;
     display: inline-block;
     width: 65%;
     border-radius: 5px;
     float: left;
     margin-left: 19px;
     margin-top:10px;
-    /*padding: 10px;
-    margin: 0 0 30px;*/
 }
 aside {
     float:right;
-    /*background-color: #9acd32;*/
     background-image: url(../images/friend.png);
     background-size: 225px;
     border-radius: 5px;
-    width: 225px;
-    height:500px;
+    width: 228px;
+    height:auto;
     margin-top: 10px;   
     margin-right: 70px;
-    /*padding: 10px;
-    margin: 0 0 30px;*/
 }
 
 section{
-    /*margin:0 auto;*/
     width: 500px;
     margin-left: 10px;
 }
 
 #wid {
-    width:20%;
+    width:30%;
 }
 
 div.header_home{
-   /* position: absolute;
-    z-index: 1;*/
-    /*margin-top: 0px;*/
     background-color: #FFC125;
     height: 240px;
     top:0px;
@@ -57,11 +46,8 @@ div.header_content{
 }
 
 div.header_top{
-    /*height: 80px;*/
-    /*border: 3px black solid;*/
     height: 80px;
-    background-image: url(../images/banner.png);
-   /*background-size: 100 150%;  */
+    background-image: url(../images/banner.gif);
 }
 
 div.header_top img{
@@ -82,7 +68,7 @@ div.header_content{
 #user_img{
     padding-top: 10px;
     width: 200px;
-    height:200px;
+    height: 200px;
 }
 
 div.name
@@ -106,25 +92,353 @@ div.span5 img{
     max-width: 120px;
 }
 
-td{
-    padding-top: 20px;
-    padding-left: 5px;
-    padding-right: 5px;
-    font-size: 15pt;
-    color: grey;
-    /*font-family:  ;*/
-}
-
-table{
-    margin-top:3em;
-}
-
 td.actAndFriNum {
     font-size: 48px;
+    color: grey;
 }
 
 div.content{
     margin:0 auto;
     width: 950px;
+}
+
+div.friend_img{
+    width: 70px;
+    height: 70px;
+    float: left;
+    margin-bottom: 10px;
+    margin-right:10px;
+    margin-left: 15px;
+}
+div.friend_img2{
+    width: 70px;
+    height: 70px;
+    float: left;
+    margin-bottom: 10px;
+    margin-right:10px;
+    margin-left: 5px;
+}
+
+div.search_img{
+    float: left;
+    margin-bottom: 20px;
+    margin-right: 25px;
+    margin-left: 15px;
+}
+div.search_img2{
+    float: left;
+    margin-bottom: 30px;
+    margin-right: 25px;
+    margin-left: 15px;
+}
+
+div.friend_info,div.search_info{
+    width: 120px;
+    height: 70px;
+    float: left;
+    margin-bottom: 15px;
+}
+
+/*div.friend_content
+{
+    margin-top: 50px;
+    margin-left: 15px;
+}
+*/
+div.friend_name,div.search_name
+{
+    font-size: 16pt;
+    color:grey;
+    font-weight: bold;
+    margin-top:5px;
+}
+
+div.friend_detail,div.search_detail
+{
+    margin-top:5px;
+    color: grey;
+}
+
+div.activity{
+    background-image: url(../images/activity_background.png);
+    width:580px;
+    height: 120px;
+    background-size: 580px 120px;
+}
+
+div.activity_left{
+    float: left;
+    width: 140px;
+    height: 120px;
+}
+
+div.activity_right{
+    float: left;
+    height: 80px;
+    width: 425px;
+    margin-left: 10px;
+    margin-top:16px;
+}
+
+div.actname{
+    font-size: 15pt;
+    color: grey;
+    font-weight: bold;
+    margin-top: 18px;
+    margin-left: 33px;
+    margin-bottom: 35px;
+}
+
+div.from_text{
+    color:#5B9BD5;
+    font-size: 12pt;
+    float: left;
+    margin-left: 20px;
+
+}
+
+div.user_name{
+    float: right;
+    margin-right: 5px;
+}
+
+div.actinfo{
+    color: grey;
+    font-size: 10pt;
+    margin-bottom: 35px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 400px;
+    overflow:hidden;
+}
+
+div.actloc{
+    float: left;
+    width: 50px;
+    color: grey;
+}
+
+div.actdate{
+    float: left;
+    margin-left:10px;
+    color: grey;
+}
+
+div.detail{
+    float: right;
+    margin-right: 10px;
+}
+
+div.detail a{
+    text-decoration: none;
+    color:grey;
+    font-weight: bold;
+}
+
+div.friend_profile{
+    background-image: url(../images/friend.png);
+    background-size: 613px auto;
+    width: 613px;
+    box-shadow: 3px 3px 3px #888888;
+}
+
+div.banner{
+    width: 613px;
+    height: 45px;
+    background-image: url(../images/banner.png);
+}
+
+div.friend_banner{
+    height: 45px;
+    background-image: url(../images/banner.png);
+    margin-bottom: 10px;
+}
+
+div.banner p,div.friend_banner p{
+    padding-top:10px;
+    width: 151px;
+    color: grey;
+    font-weight: bold;
+    font-size: 20pt;
+
+    margin:0 auto;
+}
+
+
+td.tag{
+    font-weight: bold;
+    font-size: 10pt;
+    padding-top: 8px;
+    padding-bottom: 10px;
+    color: grey;
+    text-align: right;
+}
+
+
+td.content{
+    font-size: 10pt;
+    padding-top: 8px;
+    padding-bottom: 0;
+    color: grey;
+}
+
+table.friend_info{
+    margin-left: 40px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    font-family: '宋体';
+}
+
+td.actAndFri{
+    font-size: 15pt;
+    padding-top: 45px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color:grey;
+}
+
+td.actAndFriNum{
+    padding-top:60px;
+    font-size: 36pt;
+}
+
+div.clear{
+    clear: both;
+}
+
+input.search{
+    width: 130px;
+}
+
+div.input-append{
+    margin-left: 10px;
+}
+
+div.activity_banner,div.user_banner,div.search_banner{
+    height: 45px;
+    background-image: url(../images/banner.png);
+}
+
+div.activity_banner p,div.user_banner p,div.search_banner p{
+    padding-top:10px;
+    width: 298px;
+    color: grey;
+    font-weight: bold;
+    font-size: 20pt;
+    margin:0 auto;
+}
+
+div.search_banner p{
+    width:200px;
+}
+
+div.user_banner p{
+    width: 255px;
+}
+
+.search_content{
+    width: 613px;
+    height: auto;
+    background-image: url(../images/profile_background2.png);
+    float: left;
+}
+
+div.user_content{
+    width: 613px;
+    height: 400px;
+    background-image: url(../images/profile_background.png);
+    background-size: 613px 400px;
+}
+
+div.activity_content{
+    width: 613px;
+    height: 350px;
+    background-image: url(../images/profile_background.png);
+    background-size: 613px 350px;
+    box-shadow: 2px;
+}
+
+div.activity_content_without_banner{
+    width: 613px;
+    height: 500px;
+    background-image: url(../images/profile_background.png);
+    background-size: 613px 500px;
+    box-shadow: 3px 3px 3px #888888;
+    border-bottom-right-radius: 10px; 
+}
+
+div.activity_content_without_banner img{
+    margin-left: 55px;
+}
+
+td.activity_tag,td.user_tag{
+    color: grey;
+    font-weight: bold;
+    padding-bottom: 18px;
+    font-size: 16pt;
+}
+
+td.activity_content,td.userinfo_content{
+    padding-bottom: 18px;
+    font-size: 12pt;
+    color: grey;
+}
+
+button.btn-danger,input.btn-success,input.btn-warning{
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+table.activity_table,table.user_table{
+    margin-left: 48px;
+    margin-top:20px;
+}
+
+div.searchinfo_content{
+    margin-top:30px;
+    margin-left: 40px;
+}
+
+/*
+ * add by xinliang   2013-5-15 21:30
+ * 添加帐号设置，密码修改相应样式
+*/
+#show {
+    display: none;
+}
+.menulist_set {
+    height:0px;
+}
+.menulist {
+    position: absolute;
+    z-index: 9998;
+    font-size: 12px;
+}
+.menulist .gn_text_list li {
+    height: 26px;
+    line-height: 26px;
+    font-size: 15px;
+    list-style: none;
+    display: list-item;
+}
+.menulist .gn_text_list a {
+    height:0px;
+}
+li:hover {
+    background-color: #fff2cc;
+}
+.menulist .gn_text_list li a {
+    display: block;
+    color: #333;
+    padding: 0 15px;
+    text-decoration: none;
+}
+#setimg{
+    display: inline-block;
+}
+#noshow {
+    text-decoration: none;
+    color: gray;
 }
 

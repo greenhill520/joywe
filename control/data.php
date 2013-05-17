@@ -30,12 +30,13 @@ $user11 =   login('ganqian', '123456') -> id;
 $user12 =   login('shanshan', '123456') -> id;
 
 //********************************modifyItems********************************************************
-modify('user', array('PicPath' => "u1739544-4.jpg", 'Info' => "a happy boy",'Phone'=>"15889934874",'Sex'=>"M",'Birth'=>"1990-02-28",'City'=>"广州"), $user1);
-modify('user', array('PicPath' => "u2117077-1.jpg"), $user3);
-modify('user', array('PicPath' => "u1860328-24.jpg"), $user4);
-modify('user', array('PicPath' => "u3865207-9.jpg"), $user5);
-modify('user', array('PicPath' => "u21824670-4.jpg"), $user6);
-modify('user', array('PicPath' => "u1254692-10.jpg"), $user7);
+modify('user', array('PicPath' => "xinliang.jpg", 'Info' => "a happy boy",'Phone'=>"15889934874",'Sex'=>"M",'Birth'=>"1990-02-28",'City'=>"广州"), $user1);
+modify('user', array('PicPath' => "herong.jpg"), $user2);
+modify('user', array('PicPath' => "weijian.jpg"), $user3);
+modify('user', array('PicPath' => "wenjie.jpg"), $user4);
+modify('user', array('PicPath' => "jiayi.jpg"), $user5);
+modify('user', array('PicPath' => "dinghui.jpg"), $user6);
+modify('user', array('PicPath' => "chenyu.jpg"), $user7);
 
 
 //*********************************************add friend*********************************************

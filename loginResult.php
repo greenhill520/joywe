@@ -2,8 +2,9 @@
 <html>
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link href="css/result.css" type="text/css" rel="stylesheet" />
-	<title> 成功、失败页面 </title>
+	<link rel="stylesheet" type="text/css" href="css/result.css">
+	<link href="images/icon.png" rel="shortcut icon">
+	<title> 登陆失败页面 </title>
 	</head>
 	<body>
 	<div id="overall">
@@ -19,11 +20,19 @@
 		$_SESSION['userID'] = $return->id;
 	?>
 	<div id = "success">
-	<p>登录成功，<a href="homepage.php">转到个人主页</a></p>
+
+	<script type="text/javascript" language="javascript">
+		window.location.href="homepage.php";
+	</script>
 	</div>
 	<?php }else{ ?>
-	<div id ="failed">
-	<p>登录失败，请检查您的用户名和密码 ,<a href="login.php">重新登录</a></p>
+	<div id ="failed" class="failed">
+	<a href="login.php">
+	<img width="600" height="600" class="login_fail" src="images/loginFail.png">
+	</a>
+	<script type="text/javascript" language="javascript">
+	 	setTimeout("window.location.href='login.php'",5000);
+	</script>
 	</div>
 	<?php
 		}
