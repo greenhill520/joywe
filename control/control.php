@@ -3,14 +3,12 @@ include_once("user.php");
 include_once("activity.php");
 
 function connect($user, $password) {
-	$db = new PDO('mysql:host=127.0.0.1;dbname=classparty','root','');
+	$db = new PDO('mysql:host=127.0.0.1;dbname=classparty;charset=UTF-8', 'root', '');
 	$db->query("set names utf8");
-//	$db = new PDO('mysql:host=127.0.0.1;dbname=classparty','root','123');	//平台使用
 	return $db;
 }
 
 $db = connect('root', '');
-//$db = connect('root', '123');	//平台使用
 
 //成功返回user类，已存在帐号返回error，失败返回false
 function addUser($userName,$password,$email) {

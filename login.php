@@ -20,16 +20,16 @@
 						<div class="login">
 
 						<div class="item">
-							<input id ="login_name" class="new-input" type="text" placeholder="User name" tabindex="1" maxlength="15" name="username" title="Please input your user name">
-                        </div>
+							<input id ="login_name" class="new-input" type="text" placeholder="User name" tabindex="1" maxlength="15" name="username">
+						</div>
 						<a class="register" href = "register.php">Join us</a>
 						<div class="item">
-							<input id="password" class="new-input" type="password" placeholder="Password" maxlength="20" tabindex="2" name="password" title="Please input your password">
-                        </div>
+							<input id="password" class="new-input" type="password" placeholder="Password" maxlength="20" tabindex="2" name="password">
+						</div>
 						</div>
 							
 						<div class="item-submit">
-                            <input type="image" id="button" name="login" title="login" src="images/joywe.png" onClick="document.form1.submit()">
+                            <input type="image" id="button" name="login" title="login" src="images/joywe2.png" onClick="document.formName.submit()"> 
 						</div>
 					</form>
 				</div>

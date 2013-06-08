@@ -1,7 +1,11 @@
-
-div.profile_content{
-	margin:0 auto;
+/*section{
+	width: 613px;
+	height: 500px;
+	background-image: url(../images/profile_background.png);
+	background-size: 613px 500px;
 }
+*/
+
 
 
 form{
@@ -9,6 +13,13 @@ form{
 	width: 350px;
 	margin:0 auto;
 }
+
+/*td{
+	font-size: 10pt;
+	padding-top: 10px;
+	padding-right: 0;
+}*/
+
 
 td.editTag, td.editContent,td.password_tag{
 	font-size: 10pt;
@@ -46,15 +57,16 @@ div.profile_button,div.password_button{
 }
 
 div.password_content{
-    width: 613px;
+    width: 598px;
     height: 260px;
     background-image: url(../images/profile_background.png);
     background-size: 613px 260px;
 }
 
 div.profile_content{
-	width: 613px;
+	width: 598px;
     height: 480px;
+    margin: 0 auto;
     background-image: url(../images/profile_background.png);
     background-size: 613px 480px;
 }

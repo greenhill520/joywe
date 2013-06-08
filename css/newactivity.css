@@ -1,5 +1,5 @@
 section.new_activity{
-	width: 613px;
+	width: 598px;
 	background-image: url(../images/friend.png);
 	background-size: 613px auto;
 	box-shadow: 3px 3px 3px #888888;
@@ -26,6 +26,10 @@ td.activity_tag,td.submit_left{
 	padding-left: 80px;
 }
 
+td.activity_tag{
+	padding-left: 54px;
+}
+
 input.activity_content{
 	width: 300px;
 }
@@ -43,7 +47,6 @@ div.newactivity_button{
 input.friend_choice{
 	float: left;
 	line-height: 60px;
-    margin:25px 0px 0px 0px;
 }
 
 textarea.textarea{
@@ -57,7 +60,4 @@ table.makeactivity_table{
 select.year,select.month,select.day,select.time{
 	width: 72px;
 	margin-right: 4px;
-}
-.friend {
-    padding-left: 5px;
 }

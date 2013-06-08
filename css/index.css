@@ -3,41 +3,48 @@
 }
 
 body {
+   /* margin: 0 50px;
+    padding: 0 0 25px 0;*/
     margin: 0;
     background-image: url(../images/background.gif);
 }
 
 article {
+    /*background-color: #1e90ff;*/
     display: inline-block;
-    width: 65%;
+    width: 62%;
     border-radius: 5px;
     float: left;
     margin-left: 19px;
     margin-top:10px;
+    /*padding: 10px;tag
+    margin: 0 0 30px;*/
 }
 aside {
     float:right;
+    /*background-color: #9acd32;*/
     background-image: url(../images/friend.png);
     background-size: 225px;
     border-radius: 5px;
     width: 228px;
     height:auto;
     margin-top: 10px;   
-    margin-right: 70px;
+    margin-right: 88px;
+    /*padding: 10px;
+    margin: 0 0 30px;*/
 }
 
-section{
-    width: 500px;
-    margin-left: 10px;
-}
 
 #wid {
     width:30%;
 }
 
 div.header_home{
+   /* position: absolute;
+    z-index: 1;*/
+    /*margin-top: 0px;*/
     background-color: #FFC125;
-    height: 240px;
+    height: 220px;
     top:0px;
 }
 
@@ -46,34 +53,36 @@ div.header_content{
 }
 
 div.header_top{
-    height: 80px;
-    background-image: url(../images/banner.gif);
+    height: 58px;
+    background-image: url(../images/banner3.jpg);
+
 }
 
 div.header_top img{
     float: right;
-    padding-top: 46px;
-    margin-right: 10px;    
+    margin-top: 25px;
+    margin-right: 30px;    
 }
 
 div.header_content{
     position: absolute;
     z-index: 1;
     top: 0px;
-    width: 950px;
+    width: 880px;
     left: 50%;
     margin-left: -475px;
 }
 
 #user_img{
-    padding-top: 10px;
     width: 200px;
     height: 200px;
+    background: url(../images/img-shadow.png) no-repeat right bottom;
+    padding:0px 3px 3px 0px;
 }
 
 div.name
 {
-    padding-top: 37px;
+    padding-top: 19px;
     margin-bottom: 10px;
     color: white;
     font-size: 20pt;
@@ -81,13 +90,14 @@ div.name
 
 div.info
 {
+    height: 104px;
+    width: 345px;
     margin-top:25px;
     color: grey;
     font-size: 14pt;
 }
 
 div.span5 img{
-    margin-top:78px;
     max-height: 120px;
     max-width: 120px;
 }
@@ -110,24 +120,10 @@ div.friend_img{
     margin-right:10px;
     margin-left: 15px;
 }
-div.friend_img2{
-    width: 70px;
-    height: 70px;
-    float: left;
-    margin-bottom: 10px;
-    margin-right:10px;
-    margin-left: 5px;
-}
 
 div.search_img{
     float: left;
-    margin-bottom: 20px;
-    margin-right: 25px;
-    margin-left: 15px;
-}
-div.search_img2{
-    float: left;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     margin-right: 25px;
     margin-left: 15px;
 }
@@ -139,12 +135,6 @@ div.friend_info,div.search_info{
     margin-bottom: 15px;
 }
 
-/*div.friend_content
-{
-    margin-top: 50px;
-    margin-left: 15px;
-}
-*/
 div.friend_name,div.search_name
 {
     font-size: 16pt;
@@ -157,6 +147,10 @@ div.friend_detail,div.search_detail
 {
     margin-top:5px;
     color: grey;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100px;
+    overflow:hidden;
 }
 
 div.activity{
@@ -216,6 +210,7 @@ div.actloc{
     float: left;
     width: 50px;
     color: grey;
+    /*margin-top:50px;*/
 }
 
 div.actdate{
@@ -284,9 +279,10 @@ td.content{
 
 table.friend_info{
     margin-left: 40px;
+    /*padding-bottom: 50px;*/
     margin-bottom: 30px;
     padding-bottom: 20px;
-    font-family: '宋体';
+    font-size: "宋体";
 }
 
 td.actAndFri{
@@ -336,26 +332,30 @@ div.user_banner p{
     width: 255px;
 }
 
-.search_content{
-    width: 613px;
-    height: auto;
-    background-image: url(../images/profile_background2.png);
-    float: left;
+div.search_content{
+    width: 598px;
+    height: 500px;
+    background-image: url(../images/friend.png);
+    background-size: 598px 500px;
+}
+
+img.search_fail{
+    margin-left: 50px;
 }
 
 div.user_content{
-    width: 613px;
+    width: 598px;
     height: 400px;
     background-image: url(../images/profile_background.png);
     background-size: 613px 400px;
 }
 
 div.activity_content{
-    width: 613px;
-    height: 350px;
+    width: 598px;
+    height: auto;
+    padding-bottom: 5px;
     background-image: url(../images/profile_background.png);
-    background-size: 613px 350px;
-    box-shadow: 2px;
+    background-size: 613px 520px;
 }
 
 div.activity_content_without_banner{
@@ -374,7 +374,9 @@ div.activity_content_without_banner img{
 td.activity_tag,td.user_tag{
     color: grey;
     font-weight: bold;
+    /*text-align: right;*/
     padding-bottom: 18px;
+    /*padding-left: 10px;*/
     font-size: 16pt;
 }
 
@@ -396,7 +398,7 @@ table.activity_table,table.user_table{
 }
 
 div.searchinfo_content{
-    margin-top:30px;
+    margin-top:20px;
     margin-left: 40px;
 }
 
@@ -437,8 +439,53 @@ li:hover {
 #setimg{
     display: inline-block;
 }
-#noshow {
-    text-decoration: none;
-    color: gray;
+
+div.btn-button{
+    width: 100px;
+    margin: 0 auto;
 }
 
+div.header_top_name a{
+    text-decoration: none;
+    color: white;
+    float: right;
+    font-size: 12pt;
+    margin-right: 15px;
+    margin-top: 30px;
+    width: 100px;
+}
+
+/*////////////////////////////////////////*/
+#show2 {
+    display: none;
+}
+.menulist_set2 {
+    height:0px;
+    width:120px;
+}
+.menulist2 {
+    position: absolute;
+    float:right;
+    font-size: 12px;
+    padding-top: 60px;
+    padding-left: 88%;
+}
+.menulist2 .gn_text_list2 li {
+    height: 26px;
+    line-height: 26px;
+    font-size: 15px;
+    list-style: none;
+    display: list-item;
+}
+.menulist2 .gn_text_list2 a {
+    height:0px;
+}
+li:hover {
+    background-color: #fff2cc;
+}
+.menulist2 .gn_text_list2 li a {
+    display: block;
+    color: #333;
+    padding: 0 15px;
+    text-decoration: none;
+}

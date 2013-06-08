@@ -20,6 +20,7 @@ $end = 24;
 <!DOCTYPE html>
     <html>
     <head>
+        
         <link rel="stylesheet" type="text/css" href="makeactivity.php">
         <script src="js/bootstrap.min.js"></script>
         <script src="js/homepage.js"></script>
@@ -94,6 +95,12 @@ if($user == null) {
 else {
     if( $flag == 0) {
 ?>
+<!--     <dl>
+        <dd>
+            <img alt="userface" style="width: 60px; height: 60px;"src="images/<?php echo empty($user->picPath)?'user.jpg':$user->picPath?>">
+            <a href="homepage.php?id=<?=$user->id?>"><?= $user->name?></a>
+        </dd>
+    </dl> -->
         <a href="homepage.php?id=<?=$user->id?>">
         <div class="friend_img">
             <img width="60px" height="60px" alt="userface" src="images/<?php echo empty($user->picPath)?'user.jpg':$user->picPath?>">   
@@ -108,6 +115,13 @@ else {
 <?php
     for($i = 0; $i < $friNum; $i++) {
 ?>
+<!--     <dl>
+        <dd>
+            <img alt="userface" style="width: 60px; height: 60px;"src="images/<?php echo empty($friends[$i]->picPath)?'user.jpg':$friends[$i]->picPath?>">
+            <a href="homepage.php?id=<?=$friends[$i]->id?>"><?= $friends[$i]->name?></a>
+        </dd>
+    </dl> -->
+
     <a href="homepage.php?id=<?=$friends[$i]->id?>">
         <div class="friend_img">
             <img width="60px" height="60px" alt="userface" src="images/<?php echo empty($friends[$i]->picPath)?'user.jpg':$friends[$i]->picPath?>">   
@@ -125,7 +139,7 @@ else {
     <div class="friend">
         <input class="friend_choice" type="checkbox" onchange="adduser();" name="friuser" value="<?=$user->name?>" id="<?=$user->id?>">
         <a href="homepage.php?id=<?=$user->id?>">
-        <div class="friend_img2">
+        <div class="friend_img">
             <img width="60px" height="60px" alt="userface" src="images/<?php echo empty($user->picPath)?'user.jpg':$user->picPath?>">   
         </div>
         <div class="friend_info">
@@ -140,11 +154,18 @@ else {
         for($i = 0; $i < $suitLength; $i++) {
             $fri = getDataById(new ReflectionClass('User'),'user',$suitFri[$i]);
             ?>
+<!--     <dl>
+         <dd>
+             <img alt="userface" style="width: 60px; height: 60px;"src="images/<?php echo empty($fri->picPath)?'user.jpg':$fri->picPath?>">
+             <a href="homepage.php?id=<?=$fri->id?>"><?= $fri->name?></a>
+             <input type="checkbox" onchange="adduser();" name="friuser" value="<?=$fri->name?>" id="<?=$fri->id?>" >
+         </dd>
+    </dl> -->
 
     <div class="friend">
         <input class="friend_choice" type="checkbox" onchange="adduser();" name="friuser" value="<?=$fri->name?>" id="<?=$fri->id?>" >
     <a href="homepage.php?id=<?=$friends[$i]->id?>">
-        <div class="friend_img2">
+        <div class="friend_img">
             <img width="60px" height="60px" alt="userface" src="images/<?php echo empty($friends[$i]->picPath)?'user.jpg':$friends[$i]->picPath?>">   
         </div>
         <div class="friend_info">

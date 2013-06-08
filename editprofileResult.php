@@ -4,7 +4,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="css/result.css" type="text/css" rel="stylesheet" />
-    <link href="images/icon.png" rel="shortcut icon">
     <title> 修改成功/失败页面 </title>
 </head>
 <body>
@@ -101,134 +100,68 @@
     }
     if($choose[0] == 1) {
         ?>
-        <div id = "failed" class="success">
-            <a href="editprofile.php?id=<?= $user->id?>&method=<?=$methods?>">
-                <img width="600" height="600" src="images/message_fail.png">
-            </a>
-            <script type="text/javascript">
-                alert("头像添加失败，服务器没有响应!");
-                setTimeout("window.location.href='editprofile.php?id=<?= $user->id?>&method=<?=$methods?>'",300);
-            </script>
+        <div id ="failed">
+            <p>头像添加失败，服务器没有响应 ，<a href="editprofile.php?id=<?= $user->id?>&method=<?=$methods?>">返回修改</a></p>
         </div>
     <?php }
     else if($choose[10] == 1) {
         ?>
-        <div id = "failed" class="success">
-            <a href="editprofile.php?id=<?= $user->id?>&method=<?=$methods?>">
-                <img width="600" height="600" src="images/message_fail.png">
-            </a>
-            <script type="text/javascript">
-                alert("用户头像修改失败，请只上传图片格式的文件，且图片大小不要超过200KB！");
-                setTimeout("window.location.href='editprofile.php?id=<?= $user->id?>&method=<?=$methods?>'",300);
-            </script>
+        <div id ="failed">
+            <p>用户头像修改失败，请只上传图片格式的文件，且图片大小不要超过200KB。，<a href="editprofile.php?id=<?= $user->id?>&method=<?=$methods?>">返回修改</a></p>
         </div>
     <?php }
     else if($choose[1] == 1) {
         ?>
-        <div id = "failed" class="success">
-            <a href="editprofile.php?id=<?= $user->id?>&method=<?=$methods?>">
-                <img width="600" height="600" src="images/message_fail.png">
-            </a>
-            <script type="text/javascript">
-                alert("用户名修改失败，用户名不能为空！");
-                setTimeout("window.location.href='editprofile.php?id=<?= $user->id?>&method=<?=$methods?>'",300);
-            </script>
+        <div id ="failed">
+            <p>用户名修改失败，请检查信息 ，<a href="editprofile.php?id=<?= $user->id?>&method=<?=$methods?>">返回修改</a></p>
         </div>
     <?php }
     else if($choose[2] == 1) {
         ?>
-        <div id = "failed" class="success">
-            <a href="editprofile.php?id=<?= $user->id?>&method=<?=$methods?>">
-                <img width="600" height="600" src="images/message_fail.png">
-            </a>
-            <script type="text/javascript">
-                alert("个人简介修改失败，信息不能为空！");
-                setTimeout("window.location.href='editprofile.php?id=<?= $user->id?>&method=<?=$methods?>'",300);
-            </script>
+        <div id ="failed">
+            <p>个人简介修改失败，请检查信息 ，<a href="editprofile.php?id=<?= $user->id?>&method=<?=$methods?>">返回修改</a></p>
         </div>
     <?php }
     else if($choose[3] == 1) {
         ?>
-        <div id = "failed" class="success">
-            <a href="editprofile.php?id=<?= $user->id?>&method=<?=$methods?>">
-                <img width="600" height="600" src="images/message_fail.png">
-            </a>
-            <script type="text/javascript">
-                alert("邮箱修改失败，邮箱不能为空！");
-                setTimeout("window.location.href='editprofile.php?id=<?= $user->id?>&method=<?=$methods?>'",300);
-            </script>
+        <div id ="failed">
+            <p>邮箱修改失败，请检查信息 ，<a href="editprofile.php?id=<?= $user->id?>&method=<?=$methods?>">返回修改</a></p>
         </div>
     <?php }
     else if($choose[4] == 1) {
         ?>
-        <div id = "failed" class="success">
-            <a href="editprofile.php?id=<?= $user->id?>&method=<?=$methods?>">
-                <img width="600" height="600" src="images/message_fail.png">
-            </a>
-            <script type="text/javascript">
-                alert("手机修改失败，手机不能为空！");
-                setTimeout("window.location.href='editprofile.php?id=<?= $user->id?>&method=<?=$methods?>'",300);
-            </script>
+        <div id ="failed">
+            <p>手机修改失败，请检查信息 ，<a href="editprofile.php?id=<?= $user->id?>&method=<?=$methods?>">返回修改</a></p>
         </div>
     <?php }
     else if($choose[5] == 1) {
         ?>
-        <div id = "failed" class="success">
-            <a href="editprofile.php?id=<?= $user->id?>&method=<?=$methods?>">
-                <img width="600" height="600" src="images/message_fail.png">
-            </a>
-            <script type="text/javascript">
-                alert("生日修改失败，生日不能为空！");
-                setTimeout("window.location.href='editprofile.php?id=<?= $user->id?>&method=<?=$methods?>'",300);
-            </script>
+        <div id ="failed">
+            <p>生日修改失败，请检查信息 ，<a href="editprofile.php?id=<?= $user->id?>&method=<?=$methods?>">返回修改</a></p>
         </div>
     <?php }
     else if($choose[6] == 1) {
         ?>
-        <div id = "failed" class="success">
-            <a href="editprofile.php?id=<?= $user->id?>&method=<?=$methods?>">
-                <img width="600" height="600" src="images/message_fail.png">
-            </a>
-            <script type="text/javascript">
-                alert("所在城市修改失败，城市不能为空！");
-                setTimeout("window.location.href='editprofile.php?id=<?= $user->id?>&method=<?=$methods?>'",300);
-            </script>
+        <div id ="failed">
+            <p>城市修改失败，请检查信息 ，<a href="editprofile.php?id=<?= $user->id?>&method=<?=$methods?>">返回修改</a></p>
         </div>
     <?php }
     else if($choose[7] == 1) {
         ?>
-        <div id = "failed" class="success">
-            <a href="editprofile.php?id=<?= $user->id?>&method=<?=$methods?>">
-                <img width="600" height="600" src="images/message_fail.png">
-            </a>
-            <script type="text/javascript">
-                alert("性别修改失败！");
-                setTimeout("window.location.href='editprofile.php?id=<?= $user->id?>&method=<?=$methods?>'",300);
-            </script>
+        <div id ="failed">
+            <p>性别修改失败，请检查信息 ，<a href="editprofile.php?id=<?= $user->id?>&method=<?=$methods?>">返回修改</a></p>
         </div>
     <?php }
     else if($choose[8] == 1) {
         ?>
-        <div id = "failed" class="success">
-            <a href="editprofile.php?id=<?= $user->id?>&method=<?=$methods?>">
-                <img width="600" height="600" src="images/message_fail.png">
-            </a>
-            <script type="text/javascript">
-                alert("原密码输入错误，请确认并重新输入！");
-                setTimeout("window.location.href='editprofile.php?id=<?= $user->id?>&method=<?=$methods?>'",300);
-            </script>
+        <div id ="failed">
+            <p>原密码输入错误，请检查信息 ，<a href="editprofile.php?id=<?= $user->id?>&method=<?=$methods?>">返回修改</a></p>
         </div>
     <?php }
     else if($choose[9] == 1) {
         ?>
-        <div id = "failed" class="success">
-            <a href="editprofile.php?id=<?= $user->id?>&method=<?=$methods?>">
-                <img width="600" height="600" src="images/message_fail.png">
-            </a>
-            <script type="text/javascript">
-                alert("新密码确认失败，请重新输入！");
-                setTimeout("window.location.href='editprofile.php?id=<?= $user->id?>&method=<?=$methods?>'",300);
-            </script>
+        <div id ="failed">
+            <p>新密码确认失败，请检查信息 ，<a href="editprofile.php?id=<?= $user->id?>&method=<?=$methods?>">返回修改</a></p>
         </div>
     <?php }
     else{
@@ -238,7 +171,7 @@
             <img width="600" height="600" src="images/profile_sucess.png">
             </a>
             <script type="text/javascript">
-                 setTimeout("window.location.href='homepage.php'",1000);
+                 setTimeout("window.location.href='homepage.php'",5000);
             </script>
         </div>
     <?php

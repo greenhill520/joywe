@@ -31,10 +31,10 @@ $user12 =   login('shanshan', '123456') -> id;
 
 //********************************modifyItems********************************************************
 modify('user', array('PicPath' => "xinliang.jpg", 'Info' => "a happy boy",'Phone'=>"15889934874",'Sex'=>"M",'Birth'=>"1990-02-28",'City'=>"广州"), $user1);
-modify('user', array('PicPath' => "herong.jpg"), $user2);
-modify('user', array('PicPath' => "weijian.jpg"), $user3);
+modify('user', array('PicPath' => "herong.jpg",'Info' => "奔跑！",'Phone'=>"15889567874",'Sex'=>"M",'Birth'=>"1991-03-28",'City'=>"广州"), $user2);
+modify('user', array('PicPath' => "weijian.jpg",'Info' => "在路上",'Phone'=>"152899341234",'Sex'=>"M",'Birth'=>"1990-05-28",'City'=>"广州"), $user3);
 modify('user', array('PicPath' => "wenjie.jpg"), $user4);
-modify('user', array('PicPath' => "jiayi.jpg"), $user5);
+modify('user', array('PicPath' => "jiayi.jpg",'Info' => "A smart girl",'Phone'=>"15889345674",'Sex'=>"F",'Birth'=>"1992-01-28",'City'=>"广州"), $user5);
 modify('user', array('PicPath' => "dinghui.jpg"), $user6);
 modify('user', array('PicPath' => "chenyu.jpg"), $user7);
 

@@ -24,7 +24,20 @@ else {
     <body>
     <div class="header_home">
         <div class="header_top">
-            <a href="control/logout.php"><img style="width:24px; height:24px;" title="logout" src="images/logout.png"></a>
+            <a href="control/logout.php"><img style="width:24px; height:24px;" title="退出" src="images/logout.png"></a>
+            <a href="#">
+                <div onmouseover="showMemu2(this);" onmouseout="hideMenu2(this)">
+                    <div  id="show2" class="menulist2 menulist_set2">
+                        <ul class="gn_text_list2">
+                            <li><a href="editprofile.php?id=<?=$user->id?>&method=information" >帐号设置</a></li>
+                            <li><a href="editprofile.php?id=<?=$user->id?>&method=password" >密码修改</a></li>
+                        </ul>
+                    </div>
+                    <img style="width:24px; height:24px;" title="个人设置" src="images/profile_setting.png">
+                </div>
+            </a>
+            <a href="makeactivity.php?id=<?=$user->id?>"><img class="setimg2" style="width:24px; height:24px;" title="添加活动" src="images/add_activity.png"></a>
+            <div class="header_top_name"><a href="homepage.php?id=<?= $user->id?>"><?= $user->name?></a></div>
         </div>
 
         <div class="header_content">
@@ -34,6 +47,16 @@ else {
             <div class="span5">
                 <div class="name"><?= $user->name?></div>
                 <div class="info"><?= $user->info?></div>
+                <a href="makeactivity.php?id=<?=$user->id?>"><img src="images/add.png" /></a>
+                <div class="menulist menulist_set" onmouseover="showMemu(this);" onmouseout="hideMenu(this)" id="setimg">
+                    <a><img class="setimg2" src="images/set.png" /></a>
+                    <div  id="show" >
+                    <ul class="gn_text_list">
+                            <li><a href="editprofile.php?id=<?=$user->id?>&method=information" >帐号设置</a></li>
+                            <li><a href="editprofile.php?id=<?=$user->id?>&method=password" >密码修改</a></li>
+                    </ul>
+                        </div>
+                </div>
             </div>
             <div class="span3">
                 <a href="homepage.php?id=<?= $user->id?>"><img title="Back to my homepage" class="joywe" src="images/joywe.png"/></a>
