@@ -1,4 +1,4 @@
 joywe
 =====
 
-an PHP Web Application
+an PHP Web Application to make friends get together!
